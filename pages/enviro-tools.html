@@ -18,11 +18,130 @@
 
 <body>
     <div id="page-contents">
-        
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/trailer.mp4" type="video/mp4">
+        </video>
 
         <h1>天気・背景</h1>
-        
+        <p>これは私の卒業制作です。背景制作をを促進させる３つのツールを開発しました。
+            ツールの機能を表示するために、背景を制作しました。</p>
+        <p>このプロジェクトの開発過程で支援してくださった皆様に、心より感謝申し上げます。皆様のご支援がなければ、このプロジェクトは今日のような形にはなりませんでした。
+            特に、Jaume Planes、Héctor Esteban、千島良太、UT-HUBチーム、クラスメート、そしてもちろん家族や友人たちには深く感謝しております。</p>
 
+        <div id="credits">
+            <input type="checkbox" id="credits-check" name="credits-check">
+            <label for="credits-check">※利用したアッセットはこちら！</label>
+            <p>このプロジェクト内のすべてのアセットおよびコンテンツは、以下のものを除き、すべて私が作成したものです： </p>
+            <ul>
+                <li>Desert Western Rocks/Cliffs collection by Quixel on Fab</li>
+                <li>Minedump Flats HDRI by Dimitrios Savva and Jarod Guest on PolyHaven</li>
+                <li>音楽: Cinematic Inspiration by yourtunes on Pixabay</li>
+                <li>音楽: Realize Your Dreams by Top-Flow on Pixabay</li>
+            </ul>
+            <p>「スプライン橋ツール」の動画では、橋のモデルを３つ例として含めました：</p>
+            <ul>
+                <li>Bridge meshes by TAK0YT0 on Fab</li>
+                <li>Science Fiction Tram/Train Bridge meshes by Aroba on Fab</li>
+                <li>LowPoly Manhattan Bridge by Sssb on Fab</li>
+            </ul>
+        </div>
+
+        <img src="../Resources/enviro-tools/preproduction.webp">
+
+        <h2>ダイナミックな天気ツール</h2>
+        <p>「ダイナミックな天気ツール」は、Unreal Engineの気象制御用のツールとなります。
+            これは、風・雨や雪を組み合わせ、構成可能な統合システムです。
+            パラメータで、風の方向・速度・乱れ等を設定可能です。
+            また、一陣の風、それの強度・間・頻度なども設定可能です。</p>
+        <p>雨・雪も似た設定可能です。
+            区域・粒子数・色・速度・霧の色・霧の密度・透明度などを設定可能です。
+            また、雷やそれの頻度も設定可能です。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/weather-tool.mp4" type="video/mp4">
+        </video>
+
+        <p>更に、提供されたマテリアル関数（ノード）を利用し、天気の影響がどうやってメッシュ・アクターに現れることも設定可能です。
+            プロジェクトのニーズ・ビジュアルに合わせ、様々なパラメータを設定可能です。</p>
+        <img src="../Resources/enviro-tools/material functions.webp">
+
+        <h2>スプライン橋ツール</h2>
+        <p>「スプライン橋ツール」は、制作したモデルに基づき、スプラインに沿い、橋を構築するツールとなります。
+            柱の間隔や軸のパラメータを設定可能です。
+            橋の上に街灯や他のモデルを配置可能です。
+            また、斜面の角度に制限を設けることも特徴です。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/bridges-tool.mp4" type="video/mp4">
+        </video>
+
+        <h2>プロシージャル草ツール</h2>
+        <p>「プロシージャル草ツール」は、インタラクティブな草をあっさり生やすツールとなります。
+            「Ghost of Tsushima」を参考にし、作成しました。
+            ベジェ曲線を設定し、草の形を変更可能です。
+            草の色・幅・テクスチャなども設定可能です。
+            草の塊、それのスケール・回転・色の変化も設定可能です。
+            また、風の影響（プロシージャルアニメーション）やプレーヤーの影響（インタラクティブ）も設定可能です。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/grass-tool.mp4" type="video/mp4">
+        </video>
+
+        <h2>ユーザーマニュアル</h2>
+        <p>各ツールはエンジンの中でも徹底的な説明があり、ユーザーマニュアルも作成しました。</p>
+        <img src="../Resources/enviro-tools/documentation.webp">
+
+        <h2>動作記録サブツール</h2>
+        <p>「動作記録サブツール」はプレーヤー・アクタの動作を記録し、それを解釈し、指定されたテクスチャに塗るツールとなります。
+            前述のツールの通り、使いやすいです。
+            「動作記録」ブルプリントをレベルにドラッグアンドドロップし、出力されたテクスチャをマテリアルで使用できるようになります。
+            「ダイナミックな天気」と「プロシージャル草」は、開発した「動作記録サブツール」を利用しています。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/interaction-subtool.mp4" type="video/mp4">
+        </video>
+
+        <h2>ライティング</h2>
+        <p>下記の通りライティングを設定します：<br><br>
+            １．基本の雰囲気を整えるために、ディレクショナル ライトの位置・色・強度を設定します。HDRIを使用なら、このステップに設定します。<br>
+            ２．詳細ライティングを工夫します。陰影・コントラストを加え、構図を強化することで、視聴者の視線を導きます。<br>
+            ３．Unrealのポストプロセスボリュームを用い、意図した雰囲気を深めます。<br>
+            ４．レンダリングの際、DaVinci Resolve・Photoshopでカラーグレーディングを行います。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/lighting.mp4" type="video/mp4">
+        </video>
+
+        <h2>植物</h2>
+        <p>植物は3DS Maxを用いモデリングしました。ほとんどのテクスチャはSubstance Designerで生成しましたが、葉っぱをスキャンし、制作したテクスチャもあります。制作過程は以下の通りです：<br><br>
+            １．植物の形状を探るために、テクスチャアトラスのデッサンをします。<br>
+            ２．テクスチャアトラスを試し、デッサンを変更します。<br>
+            ３．ハイポリとのモデルを制作します。<br>
+            ４．ハイポリをテクスチャアトラスベイクします。3DS Maxでゲーム向けのモデルを作り上げます。</p>
+        <img src="../Resources/enviro-tools/sketchtoatlas.webp">
+
+        <p>三角形の数・LODに関しては、（草を除き）木・小さい植物という2種類があります。<br>
+            LODにより三角形の数が以下の画像に解明されています。<br>
+            UVチャンネルをアニメーション用の情報で設定し、頂点シェーダーを用い、風の影響のアニメーションを生成しました。<br>
+            ハイシェーダーとローシェーダーの主な違いは、後者がプレイヤー動作のアニメーションを省略していることです。</p>
+        <img src="../Resources/enviro-tools/treelods.webp">
+        <img src="../Resources/enviro-tools/plantlods.webp">
+
+        <img src="../Resources/enviro-tools/pinecloseup.webp">
+        <img src="../Resources/enviro-tools/alzinacloseup.webp">
+        <img src="../Resources/enviro-tools/plantscloseup.webp">
+        <img src="../Resources/enviro-tools/callistemoncloseup.webp">
+
+        <h2>テクスチャ</h2>
+        <p>ランドスケープ・ツール・植物などのテクスチャを、Substance Designer・Substance Painter・Photoshopを用い、制作しました。
+            Substance Designerはプルデンシャル生成が特徴なので、設定可能のためにパラメータを加えました。
+            それで、同じテクスチャを容易に変化できりようになります。
+            砂と雪のマテリアルは輝くことが特徴であり、マテリアル関数ノードを用い、制作しました。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/materials1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/enviro-tools/materials2.mp4" type="video/mp4">
+        </video>
 
 
     </div>

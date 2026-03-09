@@ -225,7 +225,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    
+
     display: flex;
     cursor: pointer;
     height: 50px;
@@ -248,23 +248,21 @@ body {
     background-color: #730417;
     font-size: 20px;
     transform: translateY(-50px);
-    opacity: 0;    
+    opacity: 0;
     transition: all ease 0.25s;
 }
 
 #header.sticky h1,
-#header.sticky p
-{
+#header.sticky p {
     transform: translateY(0);
-    opacity: 1; 
+    opacity: 1;
     transition: all ease 0.25s;
 }
 
 #header.sticky:hover h1,
-#header.sticky:hover p
- {
+#header.sticky:hover p {
     transform: translateY(-50px);
-    opacity: 0; 
+    opacity: 0;
 }
 
 #header.sticky:hover::after {
@@ -285,4 +283,80 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+#credits {
+    background-color: #1e105c;
+    border-radius: 10px;
+    margin: 0 200px;
+    padding: 10px;
+    width: calc(100% - 400px);
+    transition: all ease 0.25s;
+}
+
+#credits:not(:has(input:checked)):hover {
+    background-color: #301b8a;
+}
+
+#credits p {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+#credits input {
+    display: none;
+}
+
+#credits label {
+    user-select: none;
+    cursor: pointer;
+}
+
+#credits label:after {
+    content: "▼";
+    font-size: 15px;
+    transform: rotate(0) translateY(-1px);
+    display: inline-block;
+    margin-left: 10px;
+    transition: all ease 0.5s;
+}
+
+#credits p,
+#credits ul,
+#credits li {
+    opacity: 0;
+    font-size: 0;
+    margin-top: 0;
+    padding: 0;
+    transform: scaleY(0);
+    transition: all ease 0.5s;
+}
+
+#credits:has(input:checked) p {
+    opacity: 1;
+    font-size: initial;
+    margin-top: 10px;
+    padding: initial;
+    transform: scaleY(1);
+}
+
+#credits:has(input:checked) li {
+    opacity: 1;
+    font-size: initial;
+    margin-top: initial;
+    padding: initial;
+    transform: scaleY(1);
+}
+
+#credits:has(input:checked) ul {
+    opacity: 1;
+    font-size: initial;
+    margin-top: initial;
+    padding-left: 40px;
+    transform: scaleY(1);
+}
+
+#credits:has(input:checked) label:after {
+    transform: rotate(180deg) translateY(-2px);
 }
