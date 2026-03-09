@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・血の魔術</title>
+</head>
+
+<body>
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../Resources/blood-vfx/export04_lowres.mp4" type="video/mp4">
+        </video>
+        <h1>血の魔術</h1>
+        <p>「血の魔術」はイベントシーンで使えるリアルタイム向けエフェクトです。スプライト、2Dフリップブック、メッシュフリップブック、VATという各種の液体のエフェクト制作技法を練習する機会となりました。4つの要素があります：
+        </p>
+        <img src="../Resources/blood-vfx/jp-img-01.webp">
+        <video autoplay muted loop controls>
+            <source src="../Resources/blood-vfx/Breakdown.mp4" type="video/mp4">
+        </video>
+        <h2>武器の召喚</h2>
+        <p>魔女が大きな血の飛び散りを生じ、血の武器が表します。下記のとおり制作しました：<br /><br />
+            １．Houdiniで、プロシージャルアニメーションを使ったメッシュを制作しました。<br />
+            ２．Liquigenで、①のメッシュを使ったエミッタに基づき、流体シミュレーションを実施しました。<br />
+            ３．スプライト・フリップブック・メッシュ等の形式でエクスポートしました。<br />
+            ４．Houdini・Substance Designerで、③のメッシュ・テクスチャをポストプロセスしました。<br />
+            ５．Unreal Engine・ナイアガラで、作り上げました。<br /><br />
+            最適化を考慮し、立体感を与えるために2Dと3Dアッセットを融合しました。「武器の召喚」のために制作したアッセットが以下に表示されています。</p>
+        <img src="../Resources/blood-vfx/jp-img-02.webp">
+        <p>見えるように、４Kテクスチャは２つしかありません。最適化するための要点は、２つのフリップブックを融合し、１つのテクスチャにすることでした。このように、最適化を維持しながら形の変化を加えることができました。</p>
+        <img src="../Resources/blood-vfx/jp-img-03.webp">
+        <p>立体感を更に与えるために、メッシュも入れました。VATやメッシュフリップブックではなく、普通のメッシュです。
+            頂点を、そのローカル座標の累乗の計算し、動かしました。また、サブサーフェスに影響を与えるために、Houdiniで、頂点カラーを濃度の値で設定しました。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/blood-vfx/06 Mesh.mp4" type="video/mp4">
+        </video>
+
+        <h2>血の斧</h2>
+        <p>血の斧のシェーダーは頂点を動かし、（UV Distortion）UVの値を変化させ、ノーマルマップも動かしました。
+            頂点の動かしに関しては、下に向かう頂点をマスクし、ボロノイノイズに基づきZ軸に沿い頂点を動かしました。
+            サブサーフェスに関しては、本来の斧アッセットのアーティストが作ったメタリックマップを調整し、再利用しました。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/blood-vfx/export04_lowres_axeonly.mp4" type="video/mp4">
+        </video>
+        <img src="../Resources/blood-vfx/jp-img-04.webp">
+        <p>滴る血液に関しては、１つのフリップブックテクスチャを利用しました（ノーマルマップを含め２つ）。
+            「武器の召喚」のエフェクトのように、４つのフリップブックを融合し、１つのテクスチャにしました。今回は同時にシミュレーション・レンダリングを行いました。
+        </p>
+
+
+        <h2>血の跡</h2>
+        <p>血の跡のエフェクトを制作するために、３つのテクスチャを使用しました：<br /><br />
+            １．アルファ、濃度、削れる表現（ディゾルブ）<br />
+            ２．ノーマルマップ<br />
+            ３．削れる表現中で使うノーマルマップ<br /><br />
+            それらはタイリングテクスチャです。また、前述の利用した最適化方法のとおり、２つの跡を１つのテクスチャにしました。</p>
+        <img src="../Resources/blood-vfx/jp-img-05.webp">
+
+        <h2>衝撃</h2>
+        <p>衝撃のエフェクトを制作するために、前述の説明した手法を用いました。
+            なるべく、前述の利用したテクスチャを再利用しました。
+            今回、メッシュフリップブックも利用しました。
+            大きなテクスチャの加えを回避するためにVATを使いませんでした。</p>
+        <p>頂点カラーをXYZ速度の値で設定し、それに基づき座標を補間し、スローモーションのエフェクトをできました。
+            2Dフリップブックの際はモーションベクターマップを利用しました。</p>
+        <video autoplay muted loop controls>
+            <source src="../Resources/blood-vfx/export04_lowres_impactonly.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>ポートフォリオ制作過程</p>
+    </a>
+    
+    <a href="explosion.html"><img class="next-button" src="../Resources/ui/next.svg" alt="Next Project"></a>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・ホログラム</title>
+</head>
+
+<body>
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../Resources/hologram/HologramFinal_lowres.mp4" type="video/mp4">
+        </video>
+
+        <h1>ホログラムのエフェクト</h1>
+        <p>Unreal Engineで作り上げましたホログラムのエフェクトは３つの要素があります：</p>
+
+        <img src="../Resources/hologram/jp-img-01.webp">
+
+        <h2>ホログラムのシェーダー</h2>
+        <p>ホログラムのシェーダーはモデルにホログラムのような外見を与える役割です。
+            以下の動画に進んだステップが写っています。
+            非ライティングの透明シェーディングモデルに基づき制作しました。
+            カラーカーブ機能を利用し改めて彩りました。
+            カラーカーブ機能のおかげで色を調整することが簡単です。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/hologram/HologramVFX_Breakdown_text.mp4" type="video/mp4">
+        </video>
+
+        <p>次に、本来の質感を回復しました。
+            ホログラムは光でできているものであり、シーンの光の影響を受けませんが、どこかで実際に撮影された画像ですので、それは元の光や画質があります。
+            それで、HLSLノードを利用し、簡略なPBR関数を作りました。
+            こうすると、シーンの光の影響を受けずに、質感を意識できるし、元の陰影もつけました。
+            光の色、強度、位置はマテリアルパラメータで調整可能です。</p>
+
+        <img src="../Resources/hologram/jp-img-02.webp">
+        <img src="../Resources/hologram/jp-img-03.webp">
+
+        <p>その上に、ノイズやグリッチエフェクトを加えました。
+            ポストプロセス マテリアルを利用し、輪郭がぶれるのも特徴です。</p>
+
+        <p>出入りする時のアニメーションはMaterial Parameter Collectionにより調整できます。</p>
+
+        <img src="../Resources/hologram/jp-img-04.webp">
+
+        <h2>ホログラムの投影</h2>
+        <p>ホログラムの投影のエフェクトは、円錐形のメッシュにテクスチャを動かすシェーダーです。
+            メッシュのUV座標、または画面のUV座標に基づきテクスチャをマッピングしました。</p>
+
+        <img src="../Resources/hologram/jp-img-05.webp">
+
+        <h2>ホログラムの看板</h2>
+        <p>グリッチエフェクトを利用し、ダイナミックな看板を制作しました。
+            看板を動かすために、RGBチャンネルをグレースケール情報で設定し、それをシェーダートリックでアニメーションを制作しました。</p>
+
+        <img src="../Resources/hologram/jp-img-06.webp">
+        <img src="../Resources/hologram/jp-img-07.webp">
+
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>ポートフォリオ制作過程</p>
+    </a>
+    <a href="explosion.html"><img class="previous-button" src="../Resources/ui/previous.svg" alt="Previous Project"></a>
+    <a href="enviro-tools.html"><img class="next-button" src="../Resources/ui/next.svg" alt="Next Project"></a>
+</body>
+
+</html>

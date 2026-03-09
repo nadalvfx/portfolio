@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・沈んだ石像</title>
+</head>
+
+<body>
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../Resources/sunken-statue/00 Sequence wo Gameplay.mp4" type="video/mp4">
+        </video>
+
+        <h1>沈んだ石像</h1>
+        <p>「沈んだ石像」はイベントシーンで使えるリアルタイム向けエフェクトです。
+            4つの要素を強調したいと思います：</p>
+
+        <img src="../Resources/sunken-statue/jp-img-01.webp">
+
+        <h2>水面のシェーダー</h2>
+        <p>UnrealのSingle Layer Waterシェーディングモデルを使わずに水面のシェーダー制作に挑戦しました。
+            透明シェーディングモデルに基づき制作しました。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/sunken-statue/02 Water Shader.mp4" type="video/mp4">
+        </video>
+
+        <p>リアルタイムの波紋生成は下記の通りです：<br><br>
+            １．プレーヤー・アクタの動作を記録。ブループリントコンポーネントが波発生源の情報をナイアガラグリッド２Dシステムに渡します。そして、HLSLでその情報を解釈し、指定した「位置のテクスチャ」を塗ります。<br>
+            ２．「位置のテクスチャ」に基づき、Convolution<br>
+            Kernelを利用し、波紋の動きのシミュレーションを実施します。また、「位置のテクスチャ」に基づき、泡のマスクを作成します。そして、指定した「シミュレーションのテクスチャ」を塗ります。</p>
+
+        <video autoplay muted loop>
+            <source src="../Resources/sunken-statue/04 Water Sim 1.mp4" type="video/mp4">
+        </video>
+
+        <p>３．「シミュレーションのテクスチャ」を水面のシェーダーで利用します。法線・屈折・透明度・色などを変化します。</p>
+
+        <video autoplay muted loop>
+            <source src="../Resources/sunken-statue/06 Water Sim 2.mp4" type="video/mp4">
+        </video>
+
+        <h2>水のエフェクト</h2>
+        <p>滴りのエフェクトは複数のレイヤーがあります：<br><br>
+            １．石像のマテリアルに滴りのノーマルマップ<br>
+            ２．石像を包むメッシュに滴りのシェーダー<br>
+            ３．じっくり位置した水のフィードバックと水滴<br>
+            ４．水面上の飛び散り<br><br>
+            水面の距離に基づき、エフェクトの透明度が変わり、エミッタを有効/無効にします。
+            それで、石像が水面から出てきた所しかエフェクトが見えません。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/sunken-statue/08 Falling Water Breakdown.mp4" type="video/mp4">
+        </video>
+
+        <h2>咲く花のエフェクト</h2>
+        <p>咲く花のエフェクトは、数百のアッセットに使用可能な最適化されたエフェクトです。
+            それで、咲くアニメーションは１つのRotate About Axisノードを利用し、動かしました。
+            リアルな丸まった動きにするために、数学のトリックで計算した数値をそのノードに入力しました。</p>
+        <p>花は適切な魔法感を与えるために、手描きのテクスチャを制作しました。花を3DS Maxでモデリングしました。</p>
+        <p>花の浮力を発生させるために、「シミュレーションのテクスチャ」に基づいた法線（ノーマルマップ）を利用しました。
+            そのノーマルマップは花を動かすための向き（ベクトル）があります。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/sunken-statue/10 Blooming Flowers.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>ポートフォリオ制作過程</p>
+    </a>
+    <a href="enviro-tools.html"><img class="previous-button" src="../Resources/ui/previous.svg"
+            alt="Previous Project"></a>
+</body>
+
+</html>

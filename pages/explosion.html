@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・爆発</title>
+</head>
+
+<body>
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../Resources/explosion/ExplosionFinal_lowres.mp4" type="video/mp4">
+        </video>
+        <h1>爆発</h1>
+        <p>このリアルタイムの爆発エフェクトを制作ために、Substance Designer・EmbergenとHoudiniを利用しました。
+            そして、Unreal
+            Engine・ナイアガラで、作り上げました。衝撃のデカール・爆風、衝撃波・発火の光源、閃光・流体シミュレーションのフィードバック・火花・舞い上がったちり、灰、破片・残った煙という要素で構成しました。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/explosion/Explosion_Breakdown.mp4" type="video/mp4">
+        </video>
+
+        <h2>発火（初期フラッシュ）</h2>
+        <p>リアルな爆発の動きを表現するために、初期フレームはとても大切です。
+            光源・閃光を加え、初期の形状がアピールを確実に伝えるようにしました。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/explosion/Explosion_Breakdown_start.mp4" type="video/mp4">
+        </video>
+
+        <h2>6 ウェイライティング</h2>
+        <p>6 ウェイライティング手法を利用し、流体シミュレーションをレンダリングしました。
+            それで、このエフェクトはさまざまなライティング条件下で、レベルのどの位置でも配置できます。
+            6 ウェイライティングは、（上・下・右・左・裏・表）6 方向から来る光に対する流体のライティングをレンダリングし、２つのテクスチャにベイクされます。
+            そして、エンジンで、光源の方向・爆発の位置に基づき、テクスチャのRGBチャンネルを補間されます。</p>
+
+        <video autoplay muted loop controls>
+            <source src="../Resources/explosion/Explosion_6-way_light.mp4" type="video/mp4">
+        </video>
+
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>ポートフォリオ制作過程</p>
+    </a>
+    <a href="blood-vfx.html"><img class="previous-button" src="../Resources/ui/previous.svg" alt="Previous Project"></a>
+    <a href="hologram.html"><img class="next-button" src="../Resources/ui/next.svg" alt="Next Project"></a>
+</body>
+
+</html>

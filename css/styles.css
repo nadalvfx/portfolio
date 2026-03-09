@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Yuji+Boku&display=swap');
+
+body {
+    background-color: #000000;
+    color: white;
+
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0;
+}
+
+#page-contents {
+    width: calc(100vw-100px);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation-name: fade-in;
+    animation-duration: 2s;
+}
+
+#page-contents img,
+#page-contents video {
+    max-width: 100%;
+    max-height: 90vh;
+    margin: 20px 0;
+}
+
+#page-contents p,
+#page-contents h1,
+#page-contents h2 {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+#page-contents h1 {
+    font-size: 60px;
+}
+
+#page-contents h2 {
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+#page-contents p {
+    align-self: flex-start;
+}
+
+#projects-container-outer {
+    width: 100vw;
+    height: calc(100vh - 50px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-container {
+    flex-basis: 0;
+    flex-grow: 1;
+
+
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    transition: all ease 0.5s;
+}
+
+.project {
+    flex-basis: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    transition: all ease 0.5s;
+
+
+
+    /*height: 50%;*/
+    /*max-width: 33%;*/
+}
+
+.project a {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: unset;
+}
+
+.project img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all ease 0.5s;
+}
+
+.project .project-title {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    transition: all ease 0.5s;
+
+}
+
+.project h2 {
+    margin: 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 75px;
+    font-family: "Yuji Boku", serif;
+    font-weight: 400;
+    font-style: normal;
+    filter: drop-shadow(0 0 10px black);
+}
+
+.projects-container:hover {
+    flex-grow: 1.5;
+}
+
+#projects-container-outer:has(.project:hover) img {
+    filter: brightness(25%);
+}
+
+.project:not(:hover) .project-title {
+    opacity: 0;
+}
+
+#projects-container-outer .project:hover {
+    flex-grow: 1.5;
+
+}
+
+#projects-container-outer .project:hover img {
+    filter: brightness(100%);
+}
+
+.flex-break {
+    width: 100%;
+    height: 0;
+}
+
+
+
+.close-button {
+    animation-name: navigation-buttons-off;
+    animation-duration: 0.5s;
+    position: fixed;
+    top: 0;
+    width: 35px;
+    margin: 20px;
+    opacity: 0.2;
+}
+
+.close-button:hover {
+    animation-name: navigation-buttons-on;
+    animation-duration: 0.5s;
+    opacity: 1;
+}
+
+.previous-button {
+    animation-name: navigation-buttons-off;
+    animation-duration: 0.5s;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 50px;
+    margin: 20px;
+    opacity: 0.2;
+}
+
+.previous-button:hover {
+    animation-name: navigation-buttons-on;
+    animation-duration: 0.5s;
+    opacity: 1;
+}
+
+.next-button {
+    animation-name: navigation-buttons-off;
+    animation-duration: 0.5s;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0px;
+    width: 50px;
+    margin: 20px;
+    opacity: 0.2;
+}
+
+.next-button:hover {
+    animation-name: navigation-buttons-on;
+    animation-duration: 0.5s;
+    opacity: 1;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+#header {
+    display: flex;
+    height: 50px;
+    width: calc(100vw - 200px);
+    padding: 0 100px;
+    justify-content: space-between;
+    background-color: #000000;
+    z-index: 1000;
+}
+
+#header.sticky {
+    all: unset;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    display: flex;
+    cursor: pointer;
+    height: 50px;
+    width: calc(100vw - 200px);
+    padding: 0 100px;
+    justify-content: space-between;
+    background-color: #000000;
+    transition: all ease 0.25s;
+}
+
+#header.sticky::after {
+    content: "↤　戻す";
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: 50px;
+    width: 100vw;
+    padding: 11px 0;
+    text-align: center;
+    background-color: #730417;
+    font-size: 20px;
+    transform: translateY(-50px);
+    opacity: 0;    
+    transition: all ease 0.25s;
+}
+
+#header.sticky h1,
+#header.sticky p
+{
+    transform: translateY(0);
+    opacity: 1; 
+    transition: all ease 0.25s;
+}
+
+#header.sticky:hover h1,
+#header.sticky:hover p
+ {
+    transform: translateY(-50px);
+    opacity: 0; 
+}
+
+#header.sticky:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#header h1 {
+    font-size: 20px;
+}
+
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
