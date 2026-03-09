@@ -113,8 +113,8 @@ body {
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: 75px;
-    font-family: "Yuji Boku", serif;
-    font-weight: 400;
+    /*font-family: "Yuji Boku", serif;*/
+    font-weight: 800;
     font-style: normal;
     filter: drop-shadow(0 0 10px black);
 }
@@ -311,6 +311,8 @@ body {
 #credits label {
     user-select: none;
     cursor: pointer;
+    width: 100%;
+    display: inline-block;
 }
 
 #credits label:after {
@@ -359,4 +361,49 @@ body {
 
 #credits:has(input:checked) label:after {
     transform: rotate(180deg) translateY(-2px);
+}
+
+#credits a,
+#credits a:visited {
+    color: #755ce4;
+}
+
+#tag-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin: 0 200px;
+    width: calc(100% - 400px + 20px); /* 20px for the padding it doesn't have*/
+}
+
+#time-date,
+#software {
+    /*display: flex;
+    gap: 10px;*/
+    background-color: #1e105c;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#time-date svg,
+#software svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    display: inline-block;
+    transform: translateY(3px);
+}
+
+#time-date p,
+#software p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#time-date p {
+    word-break: keep-all;
 }
