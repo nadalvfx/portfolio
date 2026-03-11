@@ -30,7 +30,7 @@ body {
 
 #reel-vid {
     width: fit-content;
-    filter: drop-shadow(0 0 20px #495c28);
+    filter: drop-shadow(0 0 10px #495c28);
     /*height: 70%;*/
     margin: 20px 0;
     padding-top: 70px;
@@ -267,7 +267,7 @@ body {
 }
 
 #header.sticky::after {
-    content: "↤　戻す";
+    content: "↤　トップへ";
     position: fixed;
     top: 0;
     left: 0;
@@ -280,6 +280,25 @@ body {
     transform: translateY(-50px);
     opacity: 0;
     transition: all ease 0.25s;
+}
+
+#header.sticky:active::after {
+    /*padding-top: 20px;*/
+    animation: pop-down 0.25s ease;
+}
+
+@keyframes pop-down {
+    0% {
+        padding-top: 11px;
+    }
+
+    50% {
+        padding-top: 20px;
+    }
+
+    100% {
+        padding-top: 11px;
+    }
 }
 
 #header.sticky h1,
@@ -359,7 +378,7 @@ body {
 #credits li {
     opacity: 0;
     font-size: 0;
-    margin-top: 0;
+    margin: 0;
     padding: 0;
     transform: scaleY(0);
     transition: all ease 0.5s;
@@ -368,7 +387,7 @@ body {
 #credits:has(input:checked) p {
     opacity: 1;
     font-size: initial;
-    margin-top: 10px;
+    margin: 10px 0;
     padding: initial;
     transform: scaleY(1);
 }
@@ -376,15 +395,16 @@ body {
 #credits:has(input:checked) li {
     opacity: 1;
     font-size: initial;
-    margin-top: initial;
+    margin: 0;
     padding: initial;
     transform: scaleY(1);
 }
 
 #credits:has(input:checked) ul {
+    display: block;
     opacity: 1;
     font-size: initial;
-    margin-top: initial;
+    margin: 10px 0;
     padding-left: 40px;
     transform: scaleY(1);
 }
@@ -605,8 +625,12 @@ body {
     transform: translateY(-1px);
 }
 
-.dropbox-btn {
-    
+span.highlight {
+    font-weight: 600;
+    background-color: #755ce4;;
+    border-radius: 10px;
+    padding: 0 8px;
+    color: #000000;
 }
 
 
