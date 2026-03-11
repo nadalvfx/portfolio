@@ -28,10 +28,10 @@ body {
     margin: 20px 0;
 }
 
-#reel-vid {
+#page-contents #reel-vid {
     width: fit-content;
     filter: drop-shadow(0 0 10px #495c28);
-    /*height: 70%;*/
+    max-height: 60%;
     margin: 20px 0;
     padding-top: 70px;
 
@@ -39,7 +39,7 @@ body {
     flex-grow: 2;
 }
 
-#reel-vid:fullscreen {
+#page-contents #reel-vid:fullscreen {
     filter: none;
     margin: 0;
     padding: 0;
