@@ -39,6 +39,12 @@ body {
     flex-grow: 2;
 }
 
+#reel-vid:fullscreen {
+    filter: none;
+    margin: 0;
+    padding: 0;
+}
+
 #page-contents p,
 #page-contents h1,
 #page-contents h2 {
