@@ -445,6 +445,10 @@ body {
     margin-bottom: 20px;
 }
 
+#software {
+    flex-grow: 1;
+}
+
 #time-date svg,
 #software svg {
     width: 18px;
@@ -643,4 +647,84 @@ span.highlight {
 .button-container {
     display: flex;
     gap: 10px;
+}
+
+/* RED container */
+#tag-container.red #time-date,
+#tag-container.red #software,
+#credits.red {
+    background-color: #730417;
+}
+
+#credits:not(:has(input:checked)).red:hover {
+    background-color: #a1122a;
+}
+
+#credits.red .highlight {
+    background-color: #c81c39;
+    color: white;
+}
+
+#credits.red a {
+    color: #ff5b76;
+}
+
+/* BROWN container */
+#tag-container.brown #time-date,
+#tag-container.brown #software,
+#credits.brown {
+    background-color: #633d21;
+}
+
+#credits:not(:has(input:checked)).brown:hover {
+    background-color: #8d532a;
+}
+
+#credits.brown .highlight {
+    background-color: #c76b29;
+    color: rgb(0, 0, 0);
+}
+
+#credits.brown a {
+    color: #e0762b;
+}
+
+/* TEAL container */
+#tag-container.teal #time-date,
+#tag-container.teal #software,
+#credits.teal {
+    background-color: #14323f;
+}
+
+#credits:not(:has(input:checked)).teal:hover {
+    background-color: #255b72;
+}
+
+#credits.teal .highlight {
+    background-color: #255b72;
+    color: rgb(255, 255, 255);
+}
+
+#credits.teal a {
+    color: #2e7897;
+}
+
+/* GREEN container */
+#tag-container.green #time-date,
+#tag-container.green #software,
+#credits.green {
+    background-color: #495c28;
+}
+
+#credits:not(:has(input:checked)).green:hover {
+    background-color: #658037;
+}
+
+#credits.green .highlight {
+    background-color: #2b3617;
+    color: rgb(255, 255, 255);
+}
+
+#credits.green a {
+    color: #7b9f3e;
 }
