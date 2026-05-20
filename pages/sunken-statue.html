@@ -89,7 +89,8 @@
 
         <p>リアルタイムの波紋生成は下記の通りです：<br><br>
             １．プレーヤー・アクタの動作を記録。ブループリントコンポーネントが波発生源の情報をナイアガラグリッド２Dシステムに渡します。そして、HLSLでその情報を解釈し、指定した「位置のテクスチャ」を塗ります。<br>
-            ２．「位置のテクスチャ」に基づき、Convolution Kernelを利用し、波紋の動きのシミュレーションを実施します。また、「位置のテクスチャ」に基づき、泡のマスクを作成します。そして、指定した「シミュレーションのテクスチャ」を塗ります。</p>
+            ２．「位置のテクスチャ」に基づき、Convolution
+            Kernelを利用し、波紋の動きのシミュレーションを実施します。また、「位置のテクスチャ」に基づき、泡のマスクを作成します。そして、指定した「シミュレーションのテクスチャ」を塗ります。</p>
 
         <video autoplay muted loop>
             <source src="../Resources/sunken-statue/04 Water Sim 1.mp4" type="video/mp4">
@@ -136,12 +137,22 @@
     <a href="enviro-tools.html"><img class="previous-button" src="../Resources/ui/previous.svg"
             alt="Previous Project"></a>
 
-    <a href="about.html" id="about-btn">
-        <div class="profile-photo"></div>
-    </a>
-    <a href="reel.html" id="reel-btn">        
-        <div class="reel-photo"></div>
-    </a>
+
+    <div id="bottom-right-buttons">
+        <a href="about.html" id="about-btn">
+            <div class="profile-photo"></div>
+        </a>
+
+        <a href="../en/pages/sunken-statue.html" id="change-lang-btn">
+            <div class="lang-photo"></div>
+        </a>
+    </div>
+
+    <div id="bottom-left-buttons">
+        <a href="reel.html" id="reel-btn">
+            <div class="reel-photo"></div>
+        </a>
+    </div>
 </body>
 
 </html>

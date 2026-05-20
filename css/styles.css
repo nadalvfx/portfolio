@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Yuji+Boku&display=swap');
 
+:root {
+    --bottom-buttons-scale: 40px;
+}
+
 body {
     background-color: #000000;
     color: white;
@@ -142,6 +146,7 @@ body {
     margin: 0;
     writing-mode: vertical-rl;
     text-orientation: upright;
+    white-space: nowrap;
     font-size: 75px;
     /*font-family: "Yuji Boku", serif;*/
     font-weight: 800;
@@ -486,14 +491,33 @@ body {
     word-break: keep-all;
 }
 
+#bottom-left-buttons,
+#bottom-right-buttons {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+    transition: all 0.4s ease;
+}
 
+#bottom-left-buttons {
+    left: 20px;
+}
+
+
+#bottom-right-buttons {
+    right: 20px;
+}
+
+#page-contents:has(#projects-container-outer:hover) ~ #bottom-left-buttons,
+#page-contents:has(#projects-container-outer:hover) ~ #bottom-right-buttons {
+    opacity: 0.2;
+}
 
 #reel-btn,
-#about-btn {
+#about-btn,
+#change-lang-btn {
     all: unset;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
     width: fit-content;
     padding: 10px;
 
@@ -511,12 +535,14 @@ body {
 }
 
 #reel-btn:hover,
-#about-btn:hover {
+#about-btn:hover,
+#change-lang-btn:hover {
     background-color: #191919;
 }
 
 #reel-btn:active,
-#about-btn:active {
+#about-btn:active,
+#change-lang-btn:active {
     transform: translateY(5px);
 }
 
@@ -544,18 +570,55 @@ body {
 }
 
 #reel-btn .reel-photo,
+#about-btn .profile-photo,
+#change-lang-btn .lang-photo {
+    display: inline-block;
+    /* background-size: cover; */
+    background-size: 100%;
+    width: var(--bottom-buttons-scale);
+    height: var(--bottom-buttons-scale);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#reel-btn .reel-photo {
+    background-image: url("../Resources/reel/reel-icon.png");
+}
+
 #about-btn .profile-photo {
     background-image: url("../Resources/about/profile-photo.png");
-    display: inline-block;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
     border-radius: 100px;
 }
 
-#reel-btn {
-    left: 20px;
+#change-lang-btn .lang-photo {
+    background-image: url("../Resources/ui/language.png");
+    transition: all 0.2s ease;
+    rotate: 0;
 }
+
+#change-lang-btn:hover .lang-photo {
+    background-size: 0;
+    rotate: 180deg;
+}
+
+#change-lang-btn::after {
+    content: "";
+    background-image: url("../Resources/ui/language-change.png");
+    background-size: 0;
+    width: var(--bottom-buttons-scale);
+    height: var(--bottom-buttons-scale);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transition: all 0.2s ease;
+    rotate: 180deg;
+}
+
+#change-lang-btn:hover::after {
+    background-size: 100%;
+    rotate: 360deg;
+}
+
 
 #reel-btn::after {
     content: "デモリール";
@@ -578,10 +641,6 @@ body {
     margin-left: 10px;
     font-size: 20px;
     transform: scaleX(1);
-}
-
-#reel-btn .reel-photo {
-    background-image: url("../Resources/reel/reel-icon.png");
 }
 
 
@@ -662,7 +721,8 @@ body {
 
 span.highlight {
     font-weight: 600;
-    background-color: #755ce4;;
+    background-color: #755ce4;
+    ;
     border-radius: 10px;
     padding: 0 8px;
     color: #000000;
