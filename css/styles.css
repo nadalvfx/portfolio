@@ -31,7 +31,7 @@ body {
 #page-contents #reel-vid {
     width: fit-content;
     filter: drop-shadow(0 0 10px #495c28);
-    max-height: 60%;
+    max-height: 50%;
     margin: 20px 0;
     padding-top: 70px;
 
