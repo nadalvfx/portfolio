@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・Hologram</title>
+</head>
+
+<body class="en">
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../../Resources/hologram/HologramFinal_lowres.mp4" type="video/mp4">
+        </video>
+
+        <div id="tag-container" class="teal">
+            <div id="time-date">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg>
+                <p>2025/6</p>
+            </div>
+            <div id="software">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z" />
+                </svg>
+                <p>Unreal Engine, Substance Designer, 3DS Max, Adobe Illustrator, Affinity Designer</p>
+            </div>
+        </div>
+        <div id="credits" class="teal">
+            <input type="checkbox" id="credits-check" name="credits-check">
+            <label for="credits-check">※What I did and assets used</label>
+            <p>◆ I did not use generative AI.</p>
+            <p><span class="highlight">What I did</span> 私はエフェクト・シェーダーを制作しました。アニメーションを調整し、衣装をリグに合わせて編集、調整しました。</p>
+            <p><span class="highlight">Assets used</span> 背景・衣装・キャラクター・キャラクターアニメーションは他のアーティストのアッセットです：</p>
+            <ul>
+                <li>Unreal Engine Metahumans</li>
+                <li>Jones Character from Mixamo:
+                    <a href="https://www.mixamo.com">https://www.mixamo.com</a>
+                </li>
+                <li>Working Sci-Fi Uniform by DEYMAR on Sketchfab:
+                    <a href="https://skfb.ly/oGoSS">https://skfb.ly/oGoSS</a>
+                </li>
+                <li>MoCap Online Free Animation Pack by MoCap Online on Fab:
+                    <a href="https://fab.com/s/70f5ca18b360">https://fab.com/s/70f5ca18b360</a>
+                </li>
+                <li>Polar Facility | Modular Sci-Fi Environment Kit by 3DBrushwork on Fab:
+                    <a href="https://fab.com/s/05743e8bc7ca">https://fab.com/s/05743e8bc7ca</a>
+                </li>
+            </ul>
+        </div>
+
+        <img src="../../Resources/hologram/preproduction.webp">
+
+        <h1>Hologram VFX</h1>
+        <p>This Hologram VFX I made in Unreal Engine is composed of three main parts:</p>
+
+        <img src="../../Resources/hologram/jp-img-01.webp">
+
+        <h2>Hologram shader</h2>
+        <p>The hologram shader gives objects the hologram appearance. As you can see in the breakdown, it starts off
+            with Unreal's translucent unlit shading model. Then, I recolor it using the Engine's Color Curve feature so
+            that it's easy to adjust or recolor the holograms by editing or swapping out the asset.</p>
+
+        <video autoplay muted loop controls>
+            <source src="../../Resources/hologram/HologramVFX_Breakdown_text.mp4" type="video/mp4">
+        </video>
+
+        <p>My next step is to recover the details of the materials. A hologram is made of light, so I am using the unlit
+            shading. However, it is also a projection of a real image captured elsewhere, and that image has its own
+            original lighting and materials. Following that logic, I recreated a simplified PBR function within my
+            material using a custom HLSL node. This way, we can make out the materials, and the lighting is independent
+            from the rest of the scene. The colors, intensity, and position of the lights are adjusted through the
+            material parameters.</p>
+
+        <img src="../../Resources/hologram/jp-img-02.webp">
+        <img src="../../Resources/hologram/jp-img-03.webp">
+
+        <p>On top of that, I added some noises and glitches that give this hologram shader its characteristic look. I
+            also blurred the edges of the holograms with a post-process material.</p>
+
+        <p>In and Out transitions are controlled through a Material Paramter Collection.</p>
+
+        <img src="../../Resources/hologram/jp-img-04.webp">
+
+        <h2>Hologram projector</h2>
+        <p>The hologram projector VFX is based on a cone to which I apply panning textures. The lines texture follows
+            the cone UVs, while the pixels texture is using screen UVs.</p>
+
+        <img src="../../Resources/hologram/jp-img-05.webp">
+
+        <h2>Hologram sign</h2>
+        <p>Lastly, the hologram sign. I wanted a glitchy and dynamic sign, so all the movement is driven by a few
+            textures with different gray-scale information in each channel. In the shader, I use this information to
+            animate the sign with tricks like alpha erosion.</p>
+
+        <img src="../../Resources/hologram/jp-img-06.webp">
+        <img src="../../Resources/hologram/jp-img-07.webp">
+
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>Portfolio</p>
+    </a>
+    <a href="explosion.html"><img class="previous-button" src="../../Resources/ui/previous.svg"
+            alt="Previous Project"></a>
+    <a href="enviro-tools.html"><img class="next-button" src="../../Resources/ui/next.svg" alt="Next Project"></a>
+    <a href="about.html" id="about-btn">
+        <div class="profile-photo"></div>
+    </a>
+    <a href="reel.html" id="reel-btn">
+        <div class="reel-photo"></div>
+    </a>
+</body>
+
+</html>

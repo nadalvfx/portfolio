@@ -149,6 +149,19 @@ body {
     filter: drop-shadow(0 0 10px black);
 }
 
+.en .project h2 {
+    margin: 0;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    text-orientation: upright;
+    font-size: 75px;
+    /*font-family: "Yuji Boku", serif;*/
+    font-weight: 800;
+    font-style: normal;
+    filter: drop-shadow(0 0 10px black);
+}
+
+
 /* on the demo reel page only*/
 #page-contents .project h2 {
     writing-mode: horizontal-tb;
@@ -286,6 +299,10 @@ body {
     transform: translateY(-50px);
     opacity: 0;
     transition: all ease 0.25s;
+}
+
+.en #header.sticky::after {
+    content: "↤　Home";
 }
 
 #header.sticky:active::after {
@@ -514,6 +531,10 @@ body {
     transition: all ease 0.2s;
 }
 
+.en #about-btn::before {
+    content: "About Me";
+}
+
 #about-btn:hover::before {
     opacity: 1;
     margin: 0;
@@ -545,6 +566,10 @@ body {
     transform: scaleX(0);
     transform-origin: left;
     transition: all ease 0.2s;
+}
+
+.en #reel-btn::after {
+    content: "Demo Reel";
 }
 
 #reel-btn:hover::after {

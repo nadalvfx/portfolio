@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html>
+
+<head>
+    <!-- The Common Crawl dataset. Used by GPT-3 (and GPT-3.5) and available for others. -->
+    <meta name="CCBot" content="nofollow">
+    <!-- Used by DeviantArt, ArtStation, etc. based on opt-in or opt-out -->
+    <!-- NoIndex and NoFollow is for disallowing search engines from indexing-->
+    <meta name="robots" content="noai, noimageai, noindex, nofollow">
+    <!-- TDM Metadata in HTML Content -->
+    <meta name="tdm-reservation" content="1">
+
+    <link href="../../css/styles.css" rel="stylesheet">
+    <title>Nadal VFX・Weather・Environment</title>
+</head>
+
+<body class="en">
+    <div id="page-contents">
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/trailer.mp4" type="video/mp4">
+        </video>
+
+        <div id="tag-container">
+            <div id="time-date">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z" />
+                </svg>
+                <p>2025/2-5</p>
+            </div>
+            <div id="software">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z" />
+                </svg>
+                <p>Unreal Engine, 3DS Max, Blender, Substance Designer, Substance Painter, Houdini, Gaea, ZBrush, Adobe
+                    Photoshop, Illustrator, InDesign, DaVinci Resolve</p>
+            </div>
+        </div>
+        <div id="credits">
+            <input type="checkbox" id="credits-check" name="credits-check">
+            <label for="credits-check">※What I did and assets used</label>
+            <p>◆ I did not use generative AI.</p>
+            <p><span class="highlight">What I did</span> 「利用したアッセット」のもの以外、すべて私が制作しました： </p>
+            <ul>
+                <li>インタラクティブなエフェクト・シェーダー・風・雨・雪・水面</li>
+                <li>背景・植物・橋・テクスチャ・マテリアル</li>
+                <li>ライティング</li>
+                <li>カメラワーク</li>
+                <li>ツール開発</li>
+                <li>等々</li>
+            </ul>
+
+            <p><span class="highlight">Assets used</span> 石・岩・HDRI・音楽は他のアーティストのアッセットです： </p>
+            <ul>
+                <li>Desert Western Rocks/Cliffs collection by Quixel on Fab</li>
+                <li>Minedump Flats HDRI by Dimitrios Savva and Jarod Guest on PolyHaven</li>
+                <li>音楽: Cinematic Inspiration by yourtunes on Pixabay</li>
+                <li>音楽: Realize Your Dreams by Top-Flow on Pixabay</li>
+            </ul>
+            <p>「スプライン橋ツール」の動画では、橋のモデルを３つ例として含めました：</p>
+            <ul>
+                <li>Bridge meshes by TAK0YT0 on Fab</li>
+                <li>Science Fiction Tram/Train Bridge meshes by Aroba on Fab</li>
+                <li>LowPoly Manhattan Bridge by Sssb on Fab</li>
+            </ul>
+        </div>
+
+        <h1>Weather・Environment VFX</h1>
+        <p>This is my graduation project. I developed three tools to aid in the creation of environments. To showcase
+            their potential, I also made an environment.</p>
+        <p>I would like to express my gratitude to everyone who supported me throughout the development of
+            this project. Without your support, this project would not have taken the form it has today.
+            In particular, I would like to thank Jaume Planes, Héctor Esteban, Ryota Chishima, the UT-HUB team, my
+            classmates, and, of course, my family and friends. </p>
+
+        <img src="../../Resources/enviro-tools/preproduction.webp">
+
+        <h2>Dynamic Weather Tool</h2>
+        <p>The Dynamic Weather Tool makes adding wind, rain, and snow to a scene a breeze (wink, wink). You can adjust
+            various parameters, including wind direction, speed, and turbulence. Additionally, you can configure wind
+            gusts, specifying their intensity, duration, and frequency.</p>
+        <p>Rain and snow have similar configuration options such as defining the area, the number of particles, color,
+            speed, fog color, and opacity. You can decide whether to include lightning, as well as its frequency. Each
+            system includes transitions that can be customized in terms of duration and appearance.</p>
+
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/weather-tool.mp4" type="video/mp4">
+        </video>
+
+        <p>Furthermore, you can control how meshes react to wind, rain, and snow using the easy-to-use material
+            functions provided. There are many parameters to customize these effects to suit the needs and look of your
+            project.</p>
+        <img src="../../Resources/enviro-tools/material functions.webp">
+
+        <h2>Spline Bridge Tool</h2>
+        <p>This is a simple spline tool that lets you build a bridge along a spline with your own meshes. You can adjust
+            parameters to set the pillars' spacing and alignment, as well as scatter other meshes on top of the bridge,
+            such as streetlamps. You can also set a maximum slope to ensure the bridge is walkable by the player.</p>
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/bridges-tool.mp4" type="video/mp4">
+        </video>
+
+        <h2>Procedural Grass Tool</h2>
+        <p>Creating grass with the Procedural Grass Tool is fast and easy. Inspired by the grass system in Ghost of
+            Tsushima, you can edit the shape of the grass by adjusting the Bézier curve that defines it. You can also
+            change the grass blade's color, width, and texture. You can group the grass in clumps and adjust the scale,
+            rotation, and color based on said clumps. Furthermore, you can also adjust the wind animation and the player
+            interaction animation.</p>
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/grass-tool.mp4" type="video/mp4">
+        </video>
+
+        <h2>Documentation</h2>
+        <p>All of the tools are commented in-engine and come with a thorough Documentation.</p>
+        <img src="../../Resources/enviro-tools/documentation.webp">
+
+        <h2>Interaction Subtool</h2>
+        <p>Both the dynamic weather tool and the grass tool utilize the interaction sub-tool I created. It is just as
+            easy to use as the other tools. Simply drag and drop the blueprint into the scene, and you will be able to
+            sample the player's interaction with the landscape and foliage on any material. This includes both
+            directional trails and persistent stepping trails. The blueprint uses a scene capture to track the movements
+            of both the player and any other actors.</p>
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/interaction-subtool.mp4" type="video/mp4">
+        </video>
+
+        <h2>Lighting</h2>
+        <p>This is my process for lighting a scene:<br><br>
+            １．I start by adjusting the position, color, and intensity of the directional light to establish the initial
+            mood. If I plan on using an HDRI, I also add it here.<br>
+            ２．I add detailed lighting to create depth and contrast, enhancing the composition and guiding the viewer's
+            eye.<br>
+            ３．I adjust the Post Process Volume in Unreal Engine to further convey the desired mood.<br>
+            ４．I color grade the footage using DaVinci Resolve or Photoshop.</p>
+
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/lighting.mp4" type="video/mp4">
+        </video>
+
+        <h2>Foliage</h2>
+        <p>I modeled the foliage in 3DS Max and created most of the textures using Substance Designer. Additionally, I
+            scanned and edited some leaves to use as textures. My process is as follows:<br><br>
+            １．To explore the shapes of the plant, I make a sketch of the texture atlas.<br>
+            ２．I test the texture atlas with a prototype and make adjustments to the sketch.<br>
+            ３．After testing the prototype and confirming all the pieces needed for my atlas, I create a high-poly
+            model.<br>
+            ４．I bake the high-poly model to a texture atlas. I finalize the game-ready model in 3DS Max.</p>
+        <img src="../../Resources/enviro-tools/jp-sketchtoatlas.webp">
+
+        <p>In terms of triangle count and LOD levels, there are two categories of foliage, not including grass: trees
+            and smaller plants. Below is a breakdwon of the triangle count for each type at every LOD level. Both types
+            of foliage use the same shader. I baked some information into a UV channel that is used by the shader to
+            cheaply animate the foliage. The main difference between the high and low shaders is that the latter
+            excludes the player interaction animation.</p>
+        <img src="../../Resources/enviro-tools/jp-treelods.webp">
+        <img src="../../Resources/enviro-tools/jp-plantlods.webp">
+
+        <img src="../../Resources/enviro-tools/pinecloseup.webp">
+        <img src="../../Resources/enviro-tools/alzinacloseup.webp">
+        <img src="../../Resources/enviro-tools/plantscloseup.webp">
+        <img src="../../Resources/enviro-tools/callistemoncloseup.webp">
+
+        <h2>Textures</h2>
+        <p>I created all the textures for the landscape, tools, foliage and other assets using Substance Designer,
+            Substance Painter, and Photoshop. Taking advantage of the procedural nature of Designer, I made all my
+            textures customizable with graph parameters, allowing me to easily adjust and create variations of the same
+            texture. Both the sand and snow textures have a glint effect, which was achieved using a custom material
+            function in Unreal.</p>
+
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/materials1.mp4" type="video/mp4">
+        </video>
+
+        <video autoplay muted loop controls>
+            <source src="../../Resources/enviro-tools/materials2.mp4" type="video/mp4">
+        </video>
+
+
+    </div>
+
+
+    <a id="header" class="sticky" href="../index.html">
+        <h1>Nadal Sastre Molinas</h1>
+        <p>Portfolio</p>
+    </a>
+    <a href="hologram.html"><img class="previous-button" src="../../Resources/ui/previous.svg"
+            alt="Previous Project"></a>
+    <a href="sunken-statue.html"><img class="next-button" src="../../Resources/ui/next.svg" alt="Next Project"></a>
+    <a href="about.html" id="about-btn">
+        <div class="profile-photo"></div>
+    </a>
+    <a href="reel.html" id="reel-btn">
+        <div class="reel-photo"></div>
+    </a>
+</body>
+
+</html>
