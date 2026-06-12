@@ -3,10 +3,11 @@
 
 :root {
     --bottom-buttons-scale: 40px;
+    --page-bg-color: #000000;
 }
 
 body {
-    background-color: #000000;
+    background-color: var(--page-bg-color);
     color: white;
 
     font-family: "Noto Sans JP", sans-serif;
@@ -271,7 +272,7 @@ body {
     width: calc(100vw - 200px);
     padding: 0 100px;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: var(--page-bg-color);
     z-index: 1000;
 }
 
@@ -287,7 +288,7 @@ body {
     width: calc(100vw - 200px);
     padding: 0 100px;
     justify-content: space-between;
-    background-color: #000000;
+    background-color: var(--page-bg-color);
     transition: all ease 0.25s;
 }
 
@@ -522,7 +523,7 @@ body {
     width: fit-content;
     padding: 10px;
 
-    background-color: #000000;
+    background-color: var(--page-bg-color);
     border-radius: 10px;
     border: 1px solid #201e1e;
     filter: drop-shadow(0 0 5px black);
@@ -652,12 +653,18 @@ body {
     padding-right: 200px;
 }
 
-
-
-.columns .profile-photo {
+#page-contents .columns img.profile-photo {
     border-radius: 1000px;
     width: 400px;
     height: 400px;
+    max-width: unset;
+}
+
+.profile-photo-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .highlight-box {
@@ -726,7 +733,7 @@ span.highlight {
     ;
     border-radius: 10px;
     padding: 0 8px;
-    color: #000000;
+    color: var(--page-bg-color);
 }
 
 
@@ -828,4 +835,51 @@ span.highlight {
 #skills-container>div {
     display: flex;
     gap: 10px
+}
+
+#social-media-links {
+    display: flex;
+    gap: 10px;
+}
+
+#social-media-links a {
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+#social-media-links a:hover {
+    animation-name: pop;
+    animation-duration: 0.2s;
+}
+
+@keyframes pop {
+    0% {
+        scale: 1;
+    }
+
+    10% {
+        scale: 0.9;
+    }
+
+    70% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+#social-media-links svg {
+    height: 30px;
+    width: 30px;
+}
+
+.svg-positive {
+    fill: white;
+}
+
+.svg-negative {
+    fill: var(--page-bg-color);
 }
