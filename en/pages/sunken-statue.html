@@ -91,7 +91,7 @@
 
         <p>The real-time water interaction works like this:<br><br>
             １．Capturing the movement of the player (or other actors). I do that via blueprint components which send
-            information to Niagara Grid 2D system. Then, in Niagara, I translate that information into a “Locations”
+            information to the Niagara Grid 2D system. Then, in Niagara, I translate that information into a “Locations”
             texture using HLSL.<br>
             ２．Using the “Locations” texture, I use a convolution kernel to simulate ripples on the surface of the water.
             I also use the texture to create a foam mask. I write all of this information into a “Simulation” texture.
@@ -109,10 +109,10 @@
         </video>
 
         <h2>Water VFX</h2>
-        <p>The water falling VFX is made up of a few different layers:<br><br>
-            １．Water dripping normals on the statue material<br>
-            ２．Water scrolling shader on a mesh that wraps around the statue<br>
-            ３．Water falling flipbooks and single droplets placed strategically<br>
+        <p>The water falling effect is made up of a few different layers:<br><br>
+            １．Panning normals on the statue material<br>
+            ２．Water falling shader on a mesh that wraps around the statue<br>
+            ３．Flipbooks and single droplets placed strategically<br>
             ４．Water splashes on the water surface<br><br>
             The activity of the emitters and the opacity of the effect changes based on the distance to the water
             surface. This way it is only visible where the statue just emerged.</p>
@@ -124,11 +124,11 @@
         <h2>Blooming Flowers</h2>
         <p>For the blooming flower effect, I focused on simplicity for an optimized effect that can be used on hundreds
             of flowers. That is why the animation is driven by a single RotateAboutAxis node, with some math magic to
-            make the movement look rounded and believable.</p>
-        <p>I hand-painted the flower texture to get the right magical feeling. I assembled the flower asset in 3DS Max.
+            make the movement look rounded and believable. I hand-painted the flower texture to get the right magical
+            feeling. I assembled the flower asset in 3DS Max.
         </p>
-        <p>To get simple buoyancy working for the flowers, it is as simple as reading the normals derived from the
-            “Simulation” Texture, as they have the directional information needed to push the flowers.</p>
+        <p>To get simple buoyancy working for the flowers, I simply used the normals derived from the “Simulation”
+            Texture, as they have the directional information needed to push the flowers.</p>
 
         <video autoplay muted loop controls>
             <source src="../../Resources/sunken-statue/10 Blooming Flowers.mp4" type="video/mp4">

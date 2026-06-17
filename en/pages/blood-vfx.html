@@ -44,7 +44,7 @@
             <p>◆ I did not use generative AI.</p>
             <p><span class="highlight">What I did</span> I made the vfx and camerawork:</p>
             <ul>
-                <li>Blood, Magic, and Steam Effects</li>
+                <li>Blood, magic, and steam effects</li>
                 <li>Blood Shader</li>
                 <li>Camerawork</li>
             </ul>
@@ -82,15 +82,15 @@
             <source src="../../Resources/blood-vfx/Breakdown.mp4" type="video/mp4">
         </video>
         <h2>Summoning</h2>
-        <p>For this effect, I wanted a big splash that revealed a blood weapon behind it. This is the process I
+        <p>For this effect, a witch summons a Blood Axe with a large splash of blood. This is the process I
             followed:<br /><br />
-            １．I made procedural animated meshes in Houdini to use as emitters<br />
+            １．I made animated meshes in Houdini to use as emitters in Liquigen<br />
             ２．I made liquid simulations in Liquigen<br />
-            ３．I exported them in various forms: sprites, flipbooks, and meshes<br />
-            ４．I did post-processing of the resulting textures and meshes in Substance Designer or Houdini<br />
+            ３．I exported them in various formats: sprites, flipbooks, and meshes<br />
+            ４．I did the post-processing of the assets in Substance Designer or Houdini<br />
             ５．I put them together in Unreal<br /><br />
-            I mixed 2D and 3D assets to achieve a convincing three-dimensional appearance while keeping performance in
-            mind. Below, you can see all the assets I used for the Summoning part of the effect:</p>
+            I mixed 2D and 3D assets to achieve a convincing three-dimensional appearance while keeping good
+            performance. Below, you can see all the assets I used for the Summoning part of the effect:</p>
         <img src="../../Resources/blood-vfx/jp-img-02.webp">
         <p>As you can see, there's only two 4K textures used for this effect. One of the critical points in saving
             performance was joining the two main flipbooks into one, adding variety while keeping the effect optimized.
@@ -104,27 +104,28 @@
         </video>
 
         <h2>Blood Axe</h2>
-        <p>The Blood Axe shader uses vertex displacement and a normals panning texture with UV distortion. As for the
-            vertex displacement, I mask the down-facing vertices and apply a downward displacement using a voronoi
-            noise. For the subsurface, I repurposed the metallic texture made by the original artist of the axe asset.
+        <p>I made this effect by applying a custom shader to an axe model. In the shader, I use vertex displacement,
+            panning normals, and subsurface to achieve the viscous, liquid appearance. As for the vertex displacement, I
+            mask the down-facing vertices and apply a downward displacement using a panning voronoi noise. As for the
+            panning normals, they are applied with UV distortion as well. As for the subsurface, I adapted and
+            repurposed the metallic texture made by the original artist of the axe asset.
         </p>
         <video autoplay muted loop controls>
             <source src="../../Resources/blood-vfx/export04_lowres_axeonly.mp4" type="video/mp4">
         </video>
         <img src="../../Resources/blood-vfx/jp-img-04.webp">
-        <p>As for the dripping, I used a single flipbook texture (two including the normals). Similarly to the Summoning
-            splash, I joined four different flipbooks into one to add variety while keeping performance. Here, I
-            simulated and rendered them all together.
+        <p>On top of the shader I added a Niagara system for the dripping. Similarly to what I did for the Summoning
+            splash, I joined four different flipbooks into one to add variety while keeping good performance.
         </p>
 
 
         <h2>Blood Trail</h2>
-        <p>In the Blood Trail, I use three textures for the main trail:<br /><br />
+        <p>In the Blood Trail, I use three main textures:<br /><br />
             １．Alpha, Thickness and Erosion<br />
             ２．Normals<br />
             ３．Second set of Normals that are blended in as the alpha erosion happens.<br /><br />
-            They are tileable textures containing two trails, similar to the trick I used before to maximize texture
-            space and variety.</p>
+            They are tileable textures. Similar to the trick I used before to maximize texture
+            space and variety, each texture contains two trails.</p>
         <img src="../../Resources/blood-vfx/jp-img-05.webp">
 
         <h2>Impact</h2>
